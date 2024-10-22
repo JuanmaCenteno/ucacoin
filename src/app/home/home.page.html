@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" scroll-y="false">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content pullingText="Arrastra para refrescar"
+          refreshingSpinner="circles" refreshingText="Refrescando...">
+      </ion-refresher-content>
+  </ion-refresher>
+
+  <!--Gráficos con slides-->
+  <div class="container">
+      <div class="row-6 mt-4">
+          <ion-slides>
+              <ion-slide class="slide1">
+                  <h2 style="position: absolute; top: 0;" class="titulito">Saldo Actual</h2>
+                  <canvas #donutChartCanvasSaldo class="canvas2">
+                </canvas>
+              </ion-slide>
+          </ion-slides>
+      </div>
+      <div class="row-6">
+          <ion-slides>
+              <ion-slide class="slide2">
+                  <h2 class="titulito" style="position: absolute; top: 0;">Transacciones Anuales</h2>
+                  <br/>
+                  <canvas #barChartCanvasGraficoTransacciones class="canvas1"></canvas>
+              </ion-slide>
+              <ion-slide style="width: 100%;">
+                  <h2 class="titulito" style="position: absolute; top: 0;">Últimas Transacciones</h2>
+                  <table id="tablaTransa" class="table mt-8">
+                    <thead>
+                      <tr>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Cartera</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let transaccion of historial">
+                        <th scope="row">{{transaccion.cantidad}} &emsp; UC</th>
+                        <td>{{transaccion.fecha_envio | date:'dd/MM/yyyy'}}</td>
+                        <td>{{transaccion.receptor}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </ion-slide>
+          </ion-slides>
+      </div>
+  </div>
+  <!--
+<ion-footer>
+    <ion-toolbar style="--background: #1e2329;">
+      <ion-button class="butonazo" style= "--background: #f3ba2f; --color: #1e2329;" >
+        <ion-icon slot="icon-only" name="swap-horizontal"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+  -->
+</ion-content>

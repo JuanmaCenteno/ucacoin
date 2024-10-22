@@ -1,0 +1,18 @@
+<ion-content>
+  <div id="card-overlay">
+    <form (ngSubmit)="register()" [formGroup]="credentials">
+      <div class="input-group">
+        <ion-item>
+          <ion-input id="username" type="text" placeholder="Nombre de usuario" formControlName="username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input id="email" type="email" placeholder="Email" formControlName="mail"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+        </ion-item>
+      </div>
+      <ion-button type="submit" expand="block" [disabled]="!credentials.valid">Registro</ion-button>
+    </form>
+  </div>
+</ion-content>

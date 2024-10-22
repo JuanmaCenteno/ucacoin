@@ -1,0 +1,23 @@
+ion-content{
+  --ion-background-color:#1E2329;
+}
+
+#titulo{
+  color: #F3BA2F;
+  text-align: center;
+}
+
+#contenedor{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  display: block !important;
+  width: 75%;
+  height: 75%;
+  /*width: 100%;*/
+}
+
+ion-content{
+  --overflow: hidden
+}

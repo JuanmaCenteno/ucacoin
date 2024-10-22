@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Enviar Ucacoin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<form (ngSubmit)="send()" [formGroup]="credentials">
+		<h1 class="texto">Enviar Ucacoin</h1>
+    <h3 id="balanzazo" class="textito">Balance Actual: {{balance}} UC</h3>
+    <br/>
+    <div class="input-group">
+			<ion-item>
+				<ion-input id="receptor" type="text" placeholder="Receptor" formControlName="receptor"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input id="cantidad" type="number" placeholder="Cantidad" formControlName="cantidad"></ion-input>
+			</ion-item>
+		</div>
+
+		<ion-button type="submit" expand="block" [disabled]="!credentials.valid">Enviar</ion-button>
+
+	</form>
+</ion-content>

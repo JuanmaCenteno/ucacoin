@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Transacciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Arrastra para refrescar"
+        refreshingSpinner="circles" refreshingText="Refrescando...">
+    </ion-refresher-content>
+</ion-refresher>
+
+  <table id="tablaTransa" class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Fecha Envío</th>
+        <th scope="col">Cartera</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaccion of transacciones">
+        <th scope="row">{{transaccion.cantidad}} &emsp; UC</th>
+        <td>{{transaccion.fecha_envio | date:'dd/MM/yyyy'}}</td>
+        <td>{{transaccion.receptor}}</td>
+      </tr>
+    </tbody>
+  </table>
+</ion-content>

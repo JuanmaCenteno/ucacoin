@@ -1,0 +1,49 @@
+ion-content {
+	--padding-top: 40%;
+	--padding-start: 10%;
+	--padding-end: 10%;
+  --background: url('../../../resources/fondo3.png') no-repeat center center / cover;
+}
+
+ion-button{
+  --background: #f3ba2f;
+  color: #1e2329;
+  font-weight: bold;
+}
+
+.input-group {
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+.errors {
+	font-size: small;
+	color: #fff;
+	background: var(--ion-color-danger);
+	padding-left: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.texto{
+  color: #f3ba2f;
+  text-align: center;
+  font-weight: bold;
+  font-size: 220%;
+}
+
+.textito{
+  color: #f3ba2f;
+  text-align: center;
+}
+
+ion-toolbar{
+  --background: #f3ba2f;
+  --opacity: 100%;
+}
+
+ion-menu-button{
+  --color: #fff;
+}
